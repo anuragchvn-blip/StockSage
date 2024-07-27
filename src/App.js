@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { FirebaseProvider } from './contexts/FirebaseContext';
+import AddItemForm from './components/AddItemForm';
+import ItemList from './components/ItemList';
+import Notification from './components/Notification';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FirebaseProvider>
+      <div>
+        <h1 style={{ marginLeft: '60px' }}>Pantry Tracker</h1>
+        <AddItemForm />
+        <Notification />
+        <ItemList />
+      </div>
+    </FirebaseProvider>
   );
 }
 
 export default App;
+
